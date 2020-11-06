@@ -6,6 +6,7 @@ from .serializers import ParkingSerializer
 class ParkingViewSet(ModelViewSet):
     queryset = Parking.objects.all()
     serializer_class = ParkingSerializer
+    lookup_field = ('plate')
 
     # def get_queryset(self):
     #     id = self.request.query_params.get('id')

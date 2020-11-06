@@ -4,4 +4,8 @@ from core.models import Parking
 class ParkingSerializer(ModelSerializer):
   class Meta:
     model = Parking
-    fields = ('plate', )
+    fields = ('id', 'plate', 'time', 'paid', 'left')
+    lookup_field = 'plate'
+    extra_kwargs = {
+      'url': {'lookup_field': 'plate'}
+    }
